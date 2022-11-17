@@ -1,53 +1,33 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+// import img_bk from './images/bk_design.jpeg'
+import img_profil from './images/black.jpg'
 
-function Header(props) {
-  return (
-    <header>
-      <h1>{props.name}</h1>
-    </header> 
-  )
-}
-
-function Main(props) {
+function Design(props) {
   return (
     <main>
-      <p> {props.adjective} recipes ever.</p>
-      <ul>
-        {props.recipes.map((recipe) => <li key={recipe.id}>{recipe.title}</li>)}
-      </ul>
+      <form>
+        <div class="container">
+          <img src={img_profil} height={150} alt="profil"/><br/>
+          <h3>{props.accueil} {props.name}</h3>
+          <input type="email" id="email" placeholder="Email" required  pattern=".+@convertmoney.com"
+          title="Merci de fournir uniquement une adresse @Convertmoney">
+          </input><br/>
+          
+          <input type="password" id="password" placeholder="Password" required></input>
+          {/*eslint-disable-next-line*/} 
+          <p>Don't have an account? <a href="#">Sign Up</a> Here!</p>
+          <button type="submit">Sign In</button>
+        </div>
+      </form>
     </main>
   )
 }
-
-function Footer(props) {
-  return (
-      <p>Copyright &copy; {props.year} </p>
-  )
-}
-
-const recipes = [
-  "Breakfast recipes",
-  "Lunch recipes",
-  "Brunch recipes",
-  "Dinners recipes"
-]
-
-const recipeObjects = recipes.map((recipe, recipe_id) => (
-  {
-    id: recipe_id,
-  title: recipe
-  }
-));
-
 function App() {
   return (
-    <div className="App">
-      <Header name="My Strange recipe"/>
-      <Main adjective="Delicious" recipes={recipeObjects} />
-      <Footer year={new Date().getFullYear()} />
+    <div className='App'>
+      <Design accueil="Welcome" name="Singa Nada"/>
     </div>
   )
 }
-
 export default App;
