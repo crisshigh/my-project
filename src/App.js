@@ -1,39 +1,25 @@
 // import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-// import img_bk from './images/bk_design.jpeg'
-
-function Header() {
+// import img_pizza from "./images/recipe_images_pizza.jpg"
+function HiddenOne() {
   return (
-    <header>
-      <h1>My strange recipe</h1>
-    </header>
+    <h1>secret</h1>
   )
 }
 
-function Main() {
+function Normal() {
   return (
-    <main>
-      <p>My recipe list</p>
-    </main>
+    <h1>Normal</h1>
   )
 }
 
-function Footer() {
+function App(props) {
   return(
-    <footer>
-      <p>Copyright &copy;2022</p>
-    </footer>
+    <>
+    {props.cond}?<HiddenOne/>:<Normal/>
+    </>
   )
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Header/>
-      <Main/>
-      <Footer/>
-    </div>
-  )
-}
 export default App;
